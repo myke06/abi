@@ -1,10 +1,9 @@
 <?php
 require('presentation/ABIEntete.vue.php');
-require('presentation/ABITitrePrinc.vue.php');
+require('presentation/ABITitre.vue.php');
 require('presentation/ABIPass.vue.php');
-require('presentation/ABIMenu.vue.php');
 
-function AfficheEcranPrinc()
+function AfficheLogin()
 {
     ?>
 <head>
@@ -14,15 +13,15 @@ function AfficheEcranPrinc()
 <body>
 
 <header>
-	<?php  afficheTitrePrinc(); ?>
+	<?php  afficheTitre(); ?>
 </header>
 
 <nav>
-<?php afficheMenu(); ?>
+	<?php  displayLogin(); ?>
 </nav>
 
 </body>
-
+</html>
 <?php
 }
 ?>
