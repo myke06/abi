@@ -15,7 +15,23 @@ class Contact
     {
     }
 
+    //VERIFICATION TELEPHONE
+    /* numeric, decimal passes */
+    private function validate_numeric($telephone)
+    {
+        return is_numeric($telephone);
+    }
 
+    /* digits only */
+    private function is_digits($telephone)
+    {
+        return !preg_match("/[^0-9]/", $telephone);
+    }
+  
+    private function lengthDigit($digit)
+    {
+        return strlen($digit);
+    }
     public function setIdClient($idClient)
     {
         $this->idClient = $idClient;
@@ -23,12 +39,22 @@ class Contact
 
     public function setIdContact($idContact)
     {
-        if (isset($idContact) && intval($idContact)===0) {
-            throw new Exception("Erreur");
-        } else {
-            $this->idContact = $idContact;
+        try{
+            if (isset($idContact) && intval($idContact)===0) {
+                throw new Exception("Erreur");
+            } else {
+                $this->idContact = $idContact;
+            }
+
+        }
+        catch(Exception $e)
+        {
+var_dump($e->getMessage());
         }
     }
+
+
+ 
 
     public function setNomContact($nomContact)
     {
@@ -39,12 +65,26 @@ class Contact
     {
         $this->prenomContact = $prenomContact;
     }
+     /**Verification de la taille, des caractères et détermine si la variable est un type numérique */
+     public function setTelContact($telContact)
+     {
+         try{
+             if ($this->validate_numeric($telContact)&& $this->lengthDigit($telContact)===10 && $this->is_digits($telContact)) {
+                 $this->telContact = $telContact;
+                  } else {
+                 throw new Exception("Veuillez saisir un numéro valide");
+         
+                  }
+ 
+         }
+         catch(Exception $e)
+         {
+ var_dump($e->getMessage());
+         }
+     }
 
-    public function setTelContact($telContact)
-    {
-        $this->telContact = $telContact;
-    }
 
+    
     public function setFonctionContact($fonctionContact)
     {
         $this->fonctionContact = $fonctionContact;

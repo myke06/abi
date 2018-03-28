@@ -17,7 +17,23 @@ class Client
     public function __constructor()
     {
     }
+ //VERIFICATION TELEPHONE
+    /* numeric, decimal passes */
+    private function validate_numeric($telephone)
+    {
+        return is_numeric($telephone);
+    }
 
+    /* digits only */
+    private function is_digits($telephone)
+    {
+        return !preg_match("/[^0-9]/", $telephone);
+    }
+  
+    private function lengthDigit($digit)
+    {
+        return strlen($digit);
+    }
 
 
     public function setIdClient($idClient)
@@ -49,28 +65,49 @@ class Client
     {
         $this->ville = $ville;
     }
-
+     /**Verification Code Postal */
     public function setCodePostal($codePostal)
     {
         $this->codePostal = $codePostal;
+        $check = "/^([0-9]{5})$/";
+        if (preg_match($check, $codePostal)===1) {
+            $this->codePostal = $codePostal;
+        } else {
+            throw new Exception("Ce code postal n'est pas valable");
+        }
     }
-
+      /**Verification de la taille, des caractères et détermine si la variable est un type numérique */
     public function setTelephone($telephone)
-    {
+    { 
+        if ($this->validate_numeric($telephone)&& $this->lengthDigit($telephone)===10 && $this->is_digits($telephone)) {
         $this->telephone = $telephone;
+    } else {
+        throw new Exception("Veuillez saisir un numéro valide");
+    }
     }
 
 
 
     public function setCa($ca)
     {
+        if (!is_numeric($ca)) {
+            throw new Exception(" Le chiffre d'affaire ne peut être que des chiffres ");
+        } else {
         $this->ca = $ca;
+        }
     }
 
 
     public function setEffectif($effectif)
     {
+        if ($effectif<=0) {
+            throw new Exception("L'effectif ne peut pas être égal à 0 ");
+        } elseif (!is_numeric($effectif)) {
+            throw new Exception("L'effectif n'est pas un nombre entier");
+        } else {
         $this->effectif =$effectif;
+        }
+        
     }
 
     public function setCommentaire($commentaire)
@@ -107,6 +144,7 @@ class Client
     {
         return $this->codePostal;
     }
+
     public function getTelephone()
     {
         return $this->telephone;
