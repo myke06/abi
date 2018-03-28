@@ -1,4 +1,23 @@
 <?php
+require('presentation/ABIEntete.vue.php');
+require('presentation/ABITitre.vue.php');
+
+
+
+    
+afficheEntete(); ?>
+</head>
+<body>
+
+<!-- 1° ligne de titre -->
+<header>
+	<?php  afficheTitre();?> 
+</header>
+
+
+
+</html>
+<?php
 function NewContact($idClient)
 {
     ?>
@@ -11,17 +30,17 @@ function NewContact($idClient)
 <table>
 
 	<tr>
-		<td>Nom :</td><td><input type = "text" name="NOM_CONTACT" /></td>
+		<td>Nom :</td><td><input type = "text" name="NOM_CONTACT" required/></td>
 	</tr>
 	<tr>
-		<td>Prenom:</td><td><input type = "text" name="PRENOM_CONTACT" /></td>
+		<td>Prenom:</td><td><input type = "text" name="PRENOM_CONTACT" required/></td>
 	</tr>
 
 	<tr>
-		<td>Telefone :</td><td><input type = "text" name="TEL_CONTACT" /></td>
+		<td id="tel1">Telefone :</td><td><input type = "text" id="tel" name="TEL_CONTACT" required/></td><td><span id="aideTel"></span></td>
 	</tr>
 	<tr>
-		<td>Fonction:</td><td><input type = "text" name="FONCTION_CONTACT" /></td>
+		<td>Fonction:</td><td><input type = "text" name="FONCTION_CONTACT" required /></td>
 	</tr>
 <input type="hidden" name="idClient" value="<?php echo $idClient; ?>">
 	<tr>
@@ -29,7 +48,7 @@ function NewContact($idClient)
 	</tr>
 </table>
 </form>
-
+<script type="text/javascript" src="../ABI-MASTER/js/verif_contact.js"></script>
 </body>
 </html>
 

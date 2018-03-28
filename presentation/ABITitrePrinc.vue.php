@@ -25,16 +25,15 @@ function goBackSite(){
 	document.getElementById("divLogin").style.visibility="hidden";
 }
 </script>
-<table >
-    <tr>
-      <td><a href="ABIEcranPrinc.php"><img src="images/VCLogo.gif" border="0"/></a></td>
-      <td class="centrer">
-			<div class="titrevideo">Vidéo-Club</div>
-			<div class="soustitrevideo">... et si on se faisait une toile, à la maison ?</div>
-	  </td>
-      <td><?php  echo $cejour['mday'] . ' ' . $libmois[$cejour['mon']] . ' ' . $cejour['year']; ?> <br /><a href="ABIAccueil.php">Logout</a></font></td>
-    </tr>
-</table>
+
+<a href="ABIAccueil.php">
+<img src="images/logo2.jpg" alt="logo du site" id = "logoAbi" height="20%" width="20%"border="0" /></a>
+
+      <div class = "date"> <?php  echo $cejour['mday'] . ' ' . $libmois[$cejour['mon']] . ' ' . $cejour['year']; ?> 
+     <br />
+     <span class = "logok"><a href="ABIAccueil.php">Logout</a></font></span>
+      </div>
+
 
 <?php
 }

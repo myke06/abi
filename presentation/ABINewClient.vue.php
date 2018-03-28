@@ -5,48 +5,47 @@ function NewClient($dataType, $dataReal)
 
 <body class="admin">
 
-<h1>Saisie d'un nouveau film</h1>
+<h1>Ajouter un Client</h1>
 
-<form name="frmNewFilm" action="ABIAjouterClient2.php" method="post">
+<form name="frmNewFilm" action="ABIAjouterClient2.php" onsubmit="return validateForm()" method="post">
 <table>
 
 	<tr>
-		<td>Raison Sociale :</td><td><input type = "text" name="RAISON_SOCIALE" /></td>
+		<td>Raison Sociale :</td><td><input type = "text" name="RAISON_SOCIALE" required /></td>
 	</tr>
 	<tr>
-		<td>Telephone :</td><td><input type = "text" name="TELEPHONE" /></td>
+		<td id="tel1">Telephone :</td><td><input type = "text" id="tel" name="TELEPHONE" required/></td>
+<td id="aideTel"></td>
 	</tr>
 	<tr>
 		<td>Nature :</td>
 		<td>
 			<select name="NOM_NATURE">
-				<?php
-                foreach ($dataType as $rowType) {
-                    ?>
-				<option value = "<?php  echo $rowType['NOM_NATURE'] ?>"><?php  echo $rowType['NOM_NATURE']?></option>
-				<?php
-                } ?>
-			</select>
+				<option value=""></option>
+					<option value="ancienne">Ancienne</option>
+	                <option value="principale">Principale</option>
+					<option value="secondaire">Secondaire</option>
+		    </select>
 		</td>
 	</tr>
 	<tr>
 		<td>Type :</td>
 		<td>
-			<select name="TYPE_SOCIETE" />
-				<?php
-                foreach ($dataReal as $rowStar) {
-                    ?>
-				<option value = "<?php  echo $rowStar['TYPE_SOCIETE'] ?>"><?php  echo trim($rowStar['TYPE_SOCIETE']) . " " . trim($rowStar['TYPE_SOCIETE']); ?></option>
-				<?php
-                } ?>
-			</select>
+			<select name="TYPE_SOCIETE">
+                <option value="prive">Prive</option>
+                <option value="public">Public</option>
+            </select>
 		</td>
 	</tr>
 	<tr>
-		<td>Effectifs :</td><td><input type = "text" name="EFFECTIF" /></td>
+		<td id="eff1" >Effectifs :</td><td><input type = "text" id="eff" name="EFFECTIF" required/></td><td><span id="aideEff"></span></td>
 	</tr>
 	<tr>
-		<td>Code postale:</td><td><input type = "text" name="CODE_POSTAL" /></td>
+		<td id="cp1">Code postale:</td><td><input type = "text" id="cp"  name="CODE_POSTAL" required /></td>
+			<td>
+			<span id="aidePost"></span>
+			</td>
+
 	</tr>
 	<tr>
 		<td>Ville:</td><td><input type = "text" name="VILLE" /></td>
@@ -58,14 +57,14 @@ function NewClient($dataType, $dataReal)
 		<td>Commentaire :</td><td><textarea name="COMMENTAIRE"></textarea></td>
 	</tr>
 	<tr>
-		<td>CA:</td><td><input type = "text" name="CA" /></td>
+		<td id="ca1">CA:</td><td><input type = "text" id="ca" name="CA" required/></td><td><span id="aideCa"></span></td>
 	</tr>
 	<tr>
-		<td><input type="submit" value="Créer" /></td><td><input type="reset" value="Recommencer"/ ></td>
+		<td><input type="submit" value="Créer"  /></td><td><input type="reset" value="Recommencer"/ ></td>
 	</tr>
 </table>
 </form>
-
+<script type="text/javascript" src="../ABI-MASTER/js/verif.js"></script>
 </body>
 </html>
 

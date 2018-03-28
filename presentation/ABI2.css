@@ -1,0 +1,112 @@
+iframe
+{
+    height: 400px;
+    padding: 300px;
+    width: 800px;
+    display: flex;
+      
+}
+body
+{
+    align-content: center;
+	background-image: url("../images/vagueBleu.jpg");
+}
+.abitittle
+{
+    text-align: right;
+}
+.date
+{
+    text-align: right;
+    font-size:  1.8em;
+    position: absolute;
+    right: 30px;
+    top: 180px;
+    border: 2px solid white;
+    color:white;
+}
+
+
+header {
+    background-color: rgb(165, 214, 233);
+    height: 250px;
+  
+}
+
+main{
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+#logoAbi
+{
+    width:250px;
+    height:250px;
+}
+#loginForm
+{
+    text-align: center;
+}
+
+.menu
+{
+    color: rgb(23, 22, 97);
+    font-size: 2em;
+  
+}
+.logok
+{
+    color:white;
+}
+.Emailok
+{
+    font-size: 2em;
+    text-align: center;
+    position: absolute;
+    right: 920px;
+    top: 350px;
+    color :rgb(137, 211, 240);
+
+}
+.MotDePasseok
+{
+    text-align: center;
+    font-size: 2em;
+    position: absolute;
+    right: 920px;
+    top: 400px;
+    color :rgb(137, 211, 240);
+}
+.boutonok
+{
+    position: absolute;
+    right: 800px;
+    top: 414px;
+    width: 90px;
+    height: 25px;
+   
+}
+.input-group-addon:focus {
+    background:rgb(165, 214, 233);
+  }
+   
+  input, textarea {
+    width: 249px;
+    
+  }
+   
+  input, textarea {
+    height: 25px;
+    
+  }
+  .boton
+  {
+    border-radius:12px 0 12px 0;
+	background: #478bf9;
+	border:none;
+	color:#fff;
+	font:bold 12px Verdana;
+	padding:6px 0 6px 0;
+
+  }

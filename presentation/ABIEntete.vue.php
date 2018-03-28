@@ -7,9 +7,13 @@ function afficheEntete()
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Bienvenue au Vidéo-Club !</title>
+
+<title>Bienvenue sur ABI</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="ABI.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="presentation/ABI2.css" media="screen  " rel="stylesheet" type="text/css" />
+
+
 <?php
 }
 ?>
+
