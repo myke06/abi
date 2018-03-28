@@ -3,8 +3,22 @@
 require('DAO/dao.php');
 require("presentation/ABIClient.vue.php");
 require("presentation/ABIListeContact.vue.php");
+require('presentation/ABIEntete.vue.php');
+require('presentation/ABITitre.vue.php');
+    
+afficheEntete(); ?>
+</head>
+<body>
+
+<!-- 1° ligne de titre -->
+<header>
+	<?php  afficheTitre();?> 
+</header>
 
 
+
+</html>
+<?php
     if (isset($_GET["idClient"]) && !empty($_GET["idClient"])) {
         $idClient = trim(htmlentities($_GET["idClient"]));
         $listContact = cnsDao::getContactsList($idClient);
@@ -16,3 +30,6 @@ require("presentation/ABIListeContact.vue.php");
         header("location: index.php?erreur=$error");
         exit();
     }
+
+    
+    ?>
