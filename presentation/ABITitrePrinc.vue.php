@@ -21,19 +21,40 @@ function afficheTitrePrinc()
 
 
 function goBackSite(){
-	
+
 	document.getElementById("divLogin").style.visibility="hidden";
 }
 </script>
 
-<a href="ABIAccueil.php">
-<img src="images/logo2.jpg" alt="logo du site" id = "logoAbi" height="20%" width="20%"border="0" /></a>
 
-      <div class = "date"> <?php  echo $cejour['mday'] . ' ' . $libmois[$cejour['mon']] . ' ' . $cejour['year']; ?> 
-     <br />
-     <span class = "logok"><a href="ABIAccueil.php">Logout</a></font></span>
-      </div>
+<?php
+try {
+        $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+    } catch (Exception $e) {
+        die('Erreur : '.$e->getMessage());
+    }
 
+    $reponse = $bdd->query('SELECT FIRSTNAME, PWD_USER FROM user WHERE MAIL_USER=\'' . $_SESSION['email'] . '\'');
+
+    while ($donnees = $reponse->fetch()) {
+        echo  ' Bonjour ' . $donnees['FIRSTNAME'] . ' votre mot de passe est "' . $donnees['PWD_USER'] .'"<br />';
+    }
+
+    $reponse->closeCursor(); ?>
+
+
+
+
+<table >
+    <tr>
+      <td><a href="ABIEcranPrinc.php"><img src="images/VCLogo.gif" border="0"/></a></td>
+      <td class="centrer">
+			<div class="titrevideo">Vidéo-Club</div>
+			<div class="soustitrevideo">... et si on se faisait une toile, à la maison ?</div>
+	  </td>
+      <td><?php  echo $cejour['mday'] . ' ' . $libmois[$cejour['mon']] . ' ' . $cejour['year']; ?> <br /><a href="ABIAccueil.php">Logout</a></font></td>
+    </tr>
+</table>
 
 <?php
 }
