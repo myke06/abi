@@ -5,14 +5,11 @@
 require('presentation/ABIEntete.vue.php');
 require('presentation/ABITitre.vue.php');
 require('presentation/ABIPass.vue.php');
-require('presentation/ABIGeolocalisation.vue.php');
-?>
 
-
-<?php function AfficheEcranAccueil()
+function AfficheEcranAccueil()
 {
     ?>
-
+<head>
 
 
 <?php afficheEntete(); ?>
@@ -21,14 +18,19 @@ require('presentation/ABIGeolocalisation.vue.php');
 
 <!-- 1° ligne de titre -->
 <header>
-	<?php  afficheTitre();?> 
+	<?php  afficheTitre(); ?>
 </header>
 <main>
-
+<h1>
+Bienvenue sur le site du Vidéo Club !
+</h1>
 </main>
 <!--colonne menu : VCIMenu.htm -->
 
-<?php afficheCarte();?> 
+
+<!-- contenu principal de la page -->
+
+<!-- fin de contenu principal de la page -->
 
 </body>
 </html>

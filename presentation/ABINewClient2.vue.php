@@ -22,5 +22,11 @@ $requete .= '\'' . $_POST['COMMENTAIRE'] . '\', ';
 
 mysqli_query($link, $requete) or die('Requête SQL invalide');
 
+// redirige vers la liste des films avec message OK
+//header('chuj dziwka pedal' . strtoupper(trim($_POST['RAISON_SOCIALE'])) . ' inséré avec succès');
+
+//facultatif, pour faire propre…
+//mysqli_free_result($result);
+//mysqli_close($link);
 
 exit();

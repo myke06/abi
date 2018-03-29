@@ -37,7 +37,7 @@ try {
     $reponse = $bdd->query('SELECT FIRSTNAME, PWD_USER FROM user WHERE MAIL_USER=\'' . $_SESSION['email'] . '\'');
 
     while ($donnees = $reponse->fetch()) {
-        echo  ' Bonjour ' . $donnees['FIRSTNAME'] . ' votre mot de passe est "' . $donnees['PWD_USER'] .'"<br />';
+        echo  ' Bonjour ' . $donnees['FIRSTNAME'] . ' votre mot de passe est "' . $donnees['PWD_USER'] .'" XD<br />';
     }
 
     $reponse->closeCursor(); ?>

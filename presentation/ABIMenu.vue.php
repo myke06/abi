@@ -3,13 +3,15 @@
 function afficheMenu()
 {
     ?>
-    <div class= "menudo">
-<table class = "menu">
+<table>
     <tr>
-      <td ><a href="ABIClientList.php">Liste des Clients</a></td>
+      <td ><a href="ABIAjouterClient.php" >Ajouter Client</a></td>
     </tr>
     <tr>
-      <td ><a href="ABIAjouterClient.php" >Nouveau Client</a></td>
+      <td ><a href="#">Les Boutiques VC</a></td>
+    </tr>
+    <tr>
+      <td ><a href="ABIClientList.php">Contacts</a></td>
     </tr>
     <tr>
       <td >
@@ -17,7 +19,6 @@ function afficheMenu()
 	  </td>
     </tr>
 </table>
-</div>
 <?php
 }
 ?>

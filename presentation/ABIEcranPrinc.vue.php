@@ -3,32 +3,27 @@ require('presentation/ABIEntete.vue.php');
 require('presentation/ABITitrePrinc.vue.php');
 require('presentation/ABIPass.vue.php');
 require('presentation/ABIMenu.vue.php');
-require('presentation/ABIGeolocalisation.vue.php');
-?>
 
-    <?php
 function AfficheEcranPrinc()
 {
     ?>
-
+<head>
 
 <?php afficheEntete(); ?>
-</head>
 
+</head>
+<body>
 
 <header>
-
 	<?php  afficheTitrePrinc(); ?>
 </header>
-<body>
-<main>
-    <?php afficheMenu(); ?>
-</main>
 
+<nav>
+<?php afficheMenu(); ?>
+</nav>
 
-<?php afficheCarte(); ?>
 </body>
-</html>
+
 <?php
 }
 ?>

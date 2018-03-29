@@ -1,27 +1,8 @@
 <?php
-require('presentation/ABIEntete.vue.php');
-require('presentation/ABITitre.vue.php');
-
-
-
-    
-afficheEntete(); ?>
-</head>
-<body>
-
-<!-- 1° ligne de titre -->
-<header>
-	<?php  afficheTitre();?> 
-</header>
-
-
-
-</html>
-<?php
 function NewContact($idClient)
 {
     ?>
-	
+
 <body class="admin">
 
 <h1>Saisie d'un nouveau film</h1>
@@ -48,7 +29,7 @@ function NewContact($idClient)
 	</tr>
 </table>
 </form>
-<script type="text/javascript" src="../ABI-MASTER/js/verif_contact.js"></script>
+<script type="text/javascript" src="../Projet ABI/js/verif_contact.js"></script>
 </body>
 </html>
 
