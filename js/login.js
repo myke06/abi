@@ -14,11 +14,21 @@ function login() {
 
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
+
       if (xhr.responseText === "OK") {
         window.location.href = "ABIEcranPrinc.php";
+        verifRed.style.color="black";
       }
       if (xhr.responseText !== "OK") {
-        document.getElementById('error').innerHTML = "<br><div class=\"alert alert-danger\" role=\"alert\"><strong>Echec lors de la connexion</strong></div>";
+        var verifRed = document.getElementById("password");
+        verifRed.style.color="red";
+        console.log("chuj dziwka pedal");
+        var infoMdp = document.getElementById("infoMdp");
+        infoMdp.textContent = "Check your login and password";
+        infoMdp.style.color = "red";
+        infoMdp.style.fontFamily = "Arial";
+        infoMdp.style.fontSize = "small";
+        //  document.getElementById('error').innerHTML = "<br><div class=\"alert alert-danger\" role=\"alert\"><strong>Echec lors de la connexion</strong></div>";
       }
     }
   }
