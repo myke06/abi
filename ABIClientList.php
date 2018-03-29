@@ -2,8 +2,9 @@
 
 require("presentation/ListeClient.vue.php");
 require('DAO/dao.php');
+require("presentation/ABIEcranPrinc.vue.php");
 
-  
-$afficheClients = array();
-$afficheClients = cnsDAO::ListeClients();
-AfficheListeClients($afficheClients);
+AfficheEcranPrinc();
+   $chuj = array();
+   $chuj = cnsDAO::ListeClients();
+   AfficheListeClients($chuj);
