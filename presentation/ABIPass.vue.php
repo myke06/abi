@@ -12,9 +12,12 @@ function displayLogin()
 </div>
 
 <div class="MotDePasseok">
-<label for="inputPassword">Mot de Passe</label>
+<label id="password1" for="inputPassword">Mot de Passe</label>
 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password" required>
+<br>
+<span id="infoMdp"></span>
+
 </div>
 
 <div class="boutonok">
