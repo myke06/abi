@@ -1,15 +1,40 @@
 <?php
+
 require("metier/contact.php");
+
 require("DAO/dao.php");
+
 require("presentation/ABIClient.vue.php");
 require("presentation/ABIListeContact.vue.php");
+require('presentation/ABIEntete.vue.php');
+require('presentation/ABITitrePrinc.vue.php');
+
+
+
+
+afficheEntete(); ?>
+</head>
+<body>
+
+<!-- 1° ligne de titre -->
+<header>
+	<?php  afficheTitrePrinc();?> 
+</header>
+
+
+
+</html>
+
+<?php
 $newContact = new contact();
+
 $newContact->setNomContact(htmlentities($_POST["NOM_CONTACT"]));
 $newContact->setPrenomContact(htmlentities($_POST["PRENOM_CONTACT"]));
 $newContact->setTelContact(htmlentities($_POST["TEL_CONTACT"]));
 $newContact->setFonctionContact(htmlentities($_POST["FONCTION_CONTACT"]));
 $newContact->setIdClient(trim(htmlentities($_POST["idClient"])));
-cnsDAO::AjouterContact($newContact);
+
+ cnsDAO::AjouterContact($newContact);
 if (isset($_POST["idClient"]) && !empty($_POST["idClient"])) {
     $idClient = trim(htmlentities($_POST["idClient"]));
     $listContact = cnsDao::getContactsList($idClient);
@@ -21,4 +46,6 @@ if (isset($_POST["idClient"]) && !empty($_POST["idClient"])) {
     header("location: index.php?erreur=$error");
     exit();
 }
+
+
 exit();
