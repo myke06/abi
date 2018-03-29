@@ -1,13 +1,15 @@
+
 iframe
 {
     height: 400px;
     padding: 300px;
     width: 800px;
     display: flex;
-      
+
 }
 body
 {
+
     align-content: center;
 	background-image: url("../images/vagueBleu.jpg");
 }
@@ -30,7 +32,7 @@ body
 header {
     background-color: rgb(165, 214, 233);
     height: 250px;
-  
+
 }
 
 main{
@@ -53,7 +55,7 @@ main{
 {
     color: rgb(23, 22, 97);
     font-size: 2em;
-  
+
 }
 .logok
 {
@@ -85,20 +87,20 @@ main{
     top: 414px;
     width: 90px;
     height: 25px;
-   
+
 }
 .input-group-addon:focus {
     background:rgb(165, 214, 233);
   }
-   
+
   input, textarea {
     width: 249px;
-    
+
   }
-   
+
   input, textarea {
     height: 25px;
-    
+
   }
   .boton
   {
@@ -110,3 +112,10 @@ main{
 	padding:6px 0 6px 0;
 
   }
+  #bonjour
+  {
+      text-align: center;
+  float: right;
+
+  }
+  

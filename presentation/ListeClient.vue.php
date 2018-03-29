@@ -1,8 +1,25 @@
 <?php
+require('presentation/ABIEntete.vue.php');
+require('presentation/ABITitrePrinc.vue.php');
+
+
+
 
 function AfficheListeClients($clients)
 {
-    ?>
+    afficheEntete(); ?>
+</head>
+<body>
+
+<!-- 1° ligne de titre -->
+<header>
+	<?php  afficheTitrePrinc(); ?> 
+</header>
+
+
+
+</html>
+
           <table id="listClientTable" class="display nowrap" >
 
        <thead>
@@ -31,6 +48,6 @@ function AfficheListeClients($clients)
         </tbody>
 
     </table>
-
+    </body>
 <?php
 } ?>

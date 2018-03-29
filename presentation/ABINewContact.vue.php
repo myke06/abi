@@ -1,4 +1,23 @@
 <?php
+require('presentation/ABIEntete.vue.php');
+require('presentation/ABITitrePrinc.vue.php');
+
+
+
+
+afficheEntete(); ?>
+</head>
+<body>
+
+<!-- 1° ligne de titre -->
+<header>
+	<?php  afficheTitrePrinc();?>
+</header>
+
+
+
+</html>
+<?php
 function NewContact($idClient)
 {
     ?>
@@ -29,7 +48,7 @@ function NewContact($idClient)
 	</tr>
 </table>
 </form>
-<script type="text/javascript" src="../Projet ABI/js/verif_contact.js"></script>
+<script type="text/javascript" src="../ABI-MASTER/js/verif_contact.js"></script>
 </body>
 </html>
 
